@@ -2,46 +2,81 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8"/>
-        <title>proyecto G10</title>
-        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calcular IMC</title>
+
+        <link rel="stylesheet" href="./css/estilos.css">
     </head>
     <body>
-        <center>
-            <h1>Formulario Ingreso de Datos</h1>
-            <h1>G10</h1><br>
-            <table cellspacing="15mpx" cellpadding="0mpx" width="520" border="0">
-                <tr>
-                    <td><strong>Nombre</strong></td>
-                    <td><input name="nombre" type="text" id="nombre" size="30" maxlength="20" placeholder="escriba aqui el nombre"></td>
-                    <td><strong>Apellido</strong></td>
-                    <td><input name="apellido" type="text" id="apellido" size="30" maxlength="20" placeholder="escriba aqui el apellido"></td>
-                </tr>
-                <tr>
-                    <td><strong>Direccion</strong></td>
-                    <td><input name="direccion" type="text" id="direccion" size="30" maxlength="20" placeholder="escriba aqui su direccion"></td>
-                    <td><strong>Telefono</strong></td>
-                    <td><input name="telefono" type="text" id="telefono" size="30" maxlength="20" placeholder="escriba aqui tu telefono"></td>
-                </tr>
-                <tr>
-                    <td><strong>Sexualidad</strong></td>
-                    <td><select name="sexo" id="sexo">
-                        <option value="1">Hombre</option>
-                        <option value="2">Mujer</option>
-                        <option value="3">Otro</option>
-                    </select><br><em></em></td>
-                </tr>
-                <tr>
-                    <td><strong>Peso</strong></td>
-                    <td><input name="peso" type="text" id="peso" size="30" maxlength="20" placeholder="escriba pesoen kg"></td>
-                    <td><strong>Estatura</strong></td>
-                    <td><input name="estatura" type="text" id="estatura" size="30" maxlength="20" placeholder="estatura debe ir en centimetros"></td>
-                </tr>
-                <tr>
-                    <th colspan="4"><input type="submit" name="enviar" id="enviar" value="ENVIAR DATOS" ></th>
-                </tr>
-            </table>
+        <header>
+            <label for="btn-menu"><img src="./img/menu.png" alt="Icono menú"></label>
+            <input type="checkbox" id="btn-menu">
+            <nav class="menu">
+                <ul>
+                    <li><a href="Index copy.html">Inicio</a></li>
+                    <li><a href="#">Reportes</a></li>
+                    <li><a href="#">Acerca de</a></li>
+                </ul>
+            </nav>
+        </header>
 
-        </center>
-        
+        <section id="seccion-formulario">
+            <div class="row text-center">
+                <h1>Calculadora IMC</h1><i class="fa-solid fa-phone"></i>
+            </div>
+            <form id="form-imc" action="#" method="POST">
+                <div class="row">
+                    <div class="col-6 col-s-6">
+                        <label for="nombre">Nombre<span class="txt-danger">*</span></label>
+                        <input name="nombre" type="text" id="nombre" maxlength="20" placeholder="Nombre" class="input-w">
+                    </div>
+                    <div class="col-6 col-s-6">
+                        <label for="apellido">Apellido<span class="txt-danger">*</span></label>
+                        <input name="apellido" type="text" id="apellido" maxlength="20" placeholder="Apellido" class="input-w">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 col-s-6">
+                        <label for="direccion">Dirección</label>
+                        <input name="direccion" type="text" id="direccion" maxlength="20" placeholder="Dirección" class="input-w">
+                    </div>
+                    <div class="col-6 col-s-6">
+                        <label for="telefono">Teléfono<span class="txt-danger">*</span></label>
+                        <input name="telefono" type="text" id="telefono" maxlength="20" placeholder="Teléfono" class="input-w">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 col-s-6">
+                        <label for="sexo">Sexo<span class="txt-danger">*</span></label>
+                        <select name="sexo" id="sexo" class="input-w">
+                            <option value="0">Seleccione una opción</option>
+                            <option value="1">Hombre</option>
+                            <option value="2">Mujer</option>
+                            <option value="3">Otro</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 col-s-6">
+                        <label for="apellido">Peso (Kg)<span class="txt-danger">*</span></label>
+                        <input name="peso" type="text" id="peso" maxlength="20" placeholder="Peso en kg" class="input-w">
+                    </div>
+                    <div class="col-6 col-s-6">
+                        <label for="estatura">Estatura (cm)<span class="txt-danger">*</span></label>
+                        <input name="estatura" type="text" id="estatura" maxlength="20" placeholder="Estatura en cm" class="input-w">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-s-12 text-center">
+                        <input type="submit" name="enviar" id="enviar" value="ENVIAR DATOS" class="btn-submit">
+                    </div>
+                </div>                
+            </form>
+        </section>  
+        <!--Pie de página-->
+        <footer class="text-center">
+            
+        </footer>
     </body>
 </html>
