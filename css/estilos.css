@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+  background-color: #eeeeee;
+  margin: 0;
+}
+
+#seccion-formulario{
+  padding: 10px;
+}
+
+#form-imc{
+  margin: 0 auto;
+  background-color: white;
+  border: 2px solid #2043C8;
+  padding: 10px;
+  border-radius: 50px 20px;
+  box-shadow: 5px 10px 8px #888888;
+}
+
+label{
+  display: block;
+}
+
+.btn-submit{
+  width: 80%;
+  height: 30px;
+}
+
+.txt-danger{
+  color: red;
+}
+
+.input-w{
+  width: 100%;
+  height: 30px;
+}
+
+.text-center{
+  text-align: center;
+}
+
+header {
+  background-color: #0099cc;
+  color: #ffffff;
+  padding: 15px;
+  width: 100%;
+}
+
+#btn-menu{
+  display: none;
+}
+
+header label{
+  display: none;
+  width: 32px;
+  height: 32px;
+  padding: 10px;
+}
+
+header label:hover{
+  cursor: pointer;
+}
+
+.menu ul{
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.menu li:hover{
+  background: rgba(0,0, 0, 0.3);
+}
+
+.menu li a{
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+}
+
+
+footer {
+  margin-top:50px;
+  background-color: #0099cc;
+  color: #ffffff;
+  text-align: center;
+  font-size: 12px;
+  width:100%;
+  height:100px;
+  position: absolute;
+  bottom: 0;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 10px;
+}
+
+[class*="col-"] {
+    width: 100%;
+}
+
+@media only screen and (min-width: 425px) {
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+    #form-imc{width: 80%;}
+    .btn-submit{width: 60%;}
+  }
+  @media only screen and (min-width: 768px) {
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+    #form-imc{width: 60%;}
+    .btn-submit{width: 40%;}
+  }
+
+  @media only screen and (min-width: 1024px) {
+    #form-imc{width: 30%;}
+    .btn-submit{width: 50%;}
+  }
+
+  @media only screen and (max-width: 768px) {
+    header label{
+      display: block;
+    }
+
+    .menu{
+      position: absolute;
+      background-color: #0099cc;
+      width: 70%;
+      margin-left: -80%;
+    }
+
+    .menu ul{
+      flex-direction: column;
+    }
+
+    .menu li{
+      border-top: 1px solid white;
+    }
+
+    #btn-menu:checked ~ .menu{
+      margin: 0;
+    }
+  }
