@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu IMC</title>
+    <link rel="stylesheet" href="_css/index.css">
+    <script src="https://kit.fontawesome.com/ab7712bbce.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+<body>
+
+    <div id="id01" class="modal">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close"
+            title="Close Modal">&times;</span>
+        <form class="modal-content">
+            <div class="modal__container">
+                <h1>Ingresa a Tu IMC</h1>
+                <p>Por favor ingresa los datos de acceso</p>
+                <hr>
+                <p class="box__txt">
+                    <input placeholder="Email o Teléfono" class="box__input" />
+                    <label class="box__label"> Su email o Teléfono </label>
+                </p>
+
+                <p class="box__txt">
+                    <input placeholder="Su contraseña" class="box__input" />
+                    <label class="box__label"> Su contraseña </label>
+                </p>
+
+                <div class="clearfix">
+                    <button type="button" class="prevBtn" onclick="document.getElementById('id01').style.display='none'"
+                        class="cancelbtn">Cancelar</button>
+                    <button type="submit" class="signupbtn">Iniciar Sesión</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="container">
+
+        <div class="header">
+            <div class="header__navBar">
+                <div class="heade__logo" onclick="location.reload()">
+                    <img src="_img/logo.png">
+                </div>
+                <div class="heade_right">
+                    <a href="#" class="header_menu" onclick="document.getElementById('id01').style.display='block'"
+                        style="width:auto;">Iniciar Sesión <i class="fas fa-sign-in-alt "></i> </a>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="calcular">
+            <div class="calcular__form">
+                <form id="regForm">
+                    <h1>Calcula Tu IMC... (índice de masa coporal). </h1>
+
+                    <div class="tab">Por favor, ingrese los siguentes datos.
+                        <p class="box__txt">
+                            <input placeholder="Su nombre *" class="box__input" id="name" />
+                            <label class="box__label"> Nombre </label>
+                            <!--<input placeholder="Nombre *" oninput="this.className = ''" name="fname">-->
+                        </p>
+                        <p class="box__txt">
+                            <input placeholder="Sus apellidos *" class="box__input" id="lastname" />
+                            <label class="box__label"> Apellidos </label>
+                        </p>
+                    </div>
+
+                    <div class="tab">Información de contacto
+                        <p class="box__txt">
+                            <input placeholder="Sus correo electrónico *" class="box__input" />
+                            <label class="box__label"> Email </label>
+                        </p>
+                        <p class="box__txt">
+                            <input placeholder="Sus número de telefóno celular *" class="box__input" />
+                            <label class="box__label"> Celular </label>
+                        </p>
+                    </div>
+
+                    <div class="tab">
+                        <span> Falta poco, algunos datos más... </span>
+                        <div class="calcular__grid">
+
+                            <div class="calcular__column">
+                                <label class="calcular__lbLeft" id="lbSexoF">Mujer</label>
+                            </div>
+
+                            <div class="calcular__column">
+                                <label class="calcular__switch">
+                                    <input type="checkbox" class="calcula_check" id="calcula_sexo"
+                                        onclick="switch_sexo();">
+                                    <span class="calcular__span round"></span>
+                                </label>
+                            </div>
+
+                            <div class="calcular__column">
+                                <label class="calcular__lbRight" id="lbSexoM">Hombre</label>
+                            </div>
+
+                            <div class="calcular__data">
+                                <p class="box__txt">
+                                    <label id="lblPeso"> Su peso: <output id="OutputPeso">50</output> Kg.</label>
+                                    <input type="range" min="1" max="200" step="1" value="60"
+                                        oninput="OutputPeso.value = rangePeso.value" id="rangePeso">
+                                </p>
+                            </div>
+                            <div class="calcular__data">
+                                <p class="box__txt">
+                                    <label id="lblEstatura"> Su estatura: <output id="OutputEstatura">160</output>
+                                        Cm.</label>
+                                    <input type="range" min="30" max="220" step="1" value="160"
+                                        oninput="OutputEstatura.value = rangeEstatura.value" id="rangeEstatura">
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div style="overflow:auto;">
+                        <div style="float:right;">
+                            <button type="button" class="prevBtn" id="prevBtn" onclick="nextPrev(-1)">Anterior</button>
+                            <button type="button" id="nextBtn" onclick="nextPrev(1)">Siguiente</button>
+                        </div>
+                    </div>
+
+                    <div style="text-align:center;margin-top:40px;">
+                        <span class="step"></span>
+                        <span class="step"></span>
+                        <span class="step"></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="resultado">
+            <div class="resultado__grid">
+                <div class="resultado__column">
+                    <div id="chart_div"></div>
+                </div>
+
+                <div class="resultado__data">
+                    <h2 class="resultado__lbRight" id="hName">Kilogramos</h2>
+                    <h4 class="resultado__lbRight" id="hResultado">Kilogramos</h4>
+                    <p class="resultado__txt" id="pTxtResultado">Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Mollitia vitae
+                        neque obcaecati, cumque
+                        exercitationem quia est enim. Est deserunt tempora nisi aperiam qui ad recusandae architecto
+                        laborum alias, cumque exercitationem.</p>
+
+                    <div class="calcular__lbLeft">
+                        <button id="btnNewIMC" onclick="location.reload()">Calcula de nuevo Tu IMC</button>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+        <div class="slideshow__container">
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                <img src="_img/1.png" style="width:100%">
+                <!--<div class="text">Caption Text</div>-->
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 3</div>
+                <img src="_img/2.jpg" style="width:100%">
+                <!--<div class="text">Caption Two</div>-->
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <img src="_img/3.jpg" style="width:100%">
+                <!--<div class="text">Caption Three</div>-->
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            <br>
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="footer">
+            <p>MinTic2021__IMC_Team 10_G15-C3</p>
+        </div>
+
+
+        <script src="_js/index.js"></script>
+</body>
+
+</html>
